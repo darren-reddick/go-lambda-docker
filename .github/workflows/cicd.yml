@@ -23,4 +23,4 @@ jobs:
         run: make unit-test
 
       - name: docker-test-setup
-        run: make docker-run-test
+        run: make docker-tests

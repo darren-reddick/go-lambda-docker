@@ -14,11 +14,20 @@ docker-run-test: docker-build-test
 
 	
 .PHONY: docker-stop-test
-docker-stop-test:
+docker-stop-test: image-test
 		docker rm -f docker-test
 
 .PHONY: unit-test
 unit-test:
-		go test ./... -v
+		go test -run [^TestDocker] -v
+
+.PHONY: image-test
+image-test: docker-run-test
+		go test -run TestDocker -v
+
+.PHONY: docker-tests
+docker-tests: docker-stop-test
+		echo "Running tests against docker test image"
+
 
 
