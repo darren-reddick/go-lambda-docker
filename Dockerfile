@@ -19,6 +19,7 @@ COPY entry.sh /
 RUN chmod 755 /entry.sh
 ENTRYPOINT [ "/entry.sh" ]
 
+# create clean, slim production image 
 FROM alpine as prod
 COPY --from=build /main /main
 RUN apk add ca-certificates
