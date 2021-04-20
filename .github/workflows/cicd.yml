@@ -37,14 +37,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    - name: Terraform Init
-      working-directory: terraform/ecr
-      run: terraform init
+      - name: Terraform Init
+        working-directory: terraform/ecr
+        run: terraform init
 
-    - name: Terraform Format
-      working-directory: terraform/ecr
-      run: terraform fmt -check
+      - name: Terraform Format
+        working-directory: terraform/ecr
+        run: terraform fmt -check
 
-    - name: Terraform Plan
-      working-directory: terraform/ecr
-      run: terraform apply
+      - name: Terraform Plan
+        working-directory: terraform/ecr
+        run: terraform apply
