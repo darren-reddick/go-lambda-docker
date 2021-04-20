@@ -18,5 +18,9 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: unit-test
         run: make unit-test
+
+      - name: docker-test-setup
+        run: make docker-run-test
