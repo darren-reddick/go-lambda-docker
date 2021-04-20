@@ -29,9 +29,9 @@ resource "aws_lambda_function" "test_lambda" {
   publish       = "true"
 
 
-  runtime          = "go1.x"
+  runtime      = "go1.x"
   package_type = "Image"
-  image_uri = data.aws_ecr_repository.image.repository_url
+  image_uri    = data.aws_ecr_repository.image.repository_url
 
   environment {
     variables = {
