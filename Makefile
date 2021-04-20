@@ -27,7 +27,10 @@ image-test: docker-run-test
 
 .PHONY: docker-tests
 docker-tests: docker-stop-test
-		echo "Running tests against docker test image"
+
+.PHONY: terraform-ecr
+terraform-ecr:
+		cd terraform && make tf-apply-ecr
 
 
 
